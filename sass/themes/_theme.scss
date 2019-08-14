@@ -1,0 +1,55 @@
+ /* theme */
+
+.container-wrapper {
+    padding:$container-wrapper-sm-down;
+    
+    @media #{$bp-sm-up}{  		
+    	padding:$container-wrapper-sm-up;
+  	}
+}
+
+  
+body {
+  font-family: $font-stack;
+  color: $color;
+  background-color: $background-color;  
+}
+
+// section - answer your body's needs
+#section-1 {
+	margin-bottom:100px;
+}
+
+%content-shared {
+	font-size: $font-size-1;	
+	line-height: 30px;
+	margin-bottom: 50px;
+}
+
+.content {
+	@extend %content-shared;
+	font-weight: 300;		
+}
+
+.content-sub {	
+	@extend %content-shared;
+	font-weight: 600;	
+}
+
+hr {
+	width:100%;
+	height:1px;
+	background: #fff;
+	margin-bottom: 50px;
+}
+
+.grid {
+	display: grid;
+	width:100%;
+	grid-row-gap:3.5%;
+
+	@media #{$bp-xs-below} {
+    	grid-row-gap:16px;
+  }
+}
+

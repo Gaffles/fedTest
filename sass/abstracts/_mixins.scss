@@ -1,0 +1,26 @@
+/* headings */
+@mixin heading-format($color, $font-size, $font-weight, $letter-spacing, $line-height, $text-align, $margin-bottom) {
+     color: $color;
+     font-size: $font-size;
+     font-weight: $font-weight;
+     letter-spacing: $letter-spacing;
+     line-height: $line-height;
+     text-align: $text-align;  
+	   margin-bottom: $margin-bottom;
+}
+
+.heading-sec2-1 {
+  @include heading-format(#FFFFFF,42px,300,0.81px,57px,center,35px);	
+}
+
+.heading-sec1-1 {
+  @include heading-format(#FFFFFF,26px,300,0.5px,36px,left,15px);	
+}
+
+.heading-sec1-2 {
+  @include heading-format(#CF1430,16px,600,0.4px,28px,left,15px);	
+}
+
+
+
+
