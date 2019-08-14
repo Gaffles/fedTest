@@ -49,6 +49,7 @@ function scssDev() {
 }
 
 function scssDist() {
+	return gulp.src('sass/**/*.scss')
 	.pipe(sourcemaps.init())
         .pipe(cleanCSS())
         .pipe(sourcemaps.write())
