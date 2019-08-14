@@ -53,3 +53,35 @@ hr {
   }
 }
 
+// section - all the latest
+.card {
+	background-color: $background-color;
+	.card-img-top {
+		border-bottom: 4px solid #CF1430;	
+	}
+	.card-heading {
+		font-size: $font-size-1;
+		font-weight: 600;
+		line-height: 30px;
+		margin:15px 0px;
+  	}
+	.card-content {	
+		color: #C2C2C2;
+		font-size: $font-size-2;
+		font-weight: 300;
+		line-height: 28px;
+	}
+	.card-link {
+		&:hover {
+        	text-decoration:none;
+      	}		
+      	width:94px;
+		color: $color;
+		font-size: $font-size-2;
+		font-weight: 600; 
+		line-height: 30px;
+		padding-bottom: 5px;	
+		border-bottom: 1px solid #CF1430;	
+	}
+}
+
