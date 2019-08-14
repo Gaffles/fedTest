@@ -15,7 +15,19 @@
 
   </head>
   <body>
-   
+    <!-- modal -->
+    <div class="modal" tabindex="-1" role="dialog" ID="modal-image">
+      <div class="modal-dialog" role="document">
+        <div class="modal-content">
+          <div class="modal-body">
+             <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+             <span class="btn-pos" aria-hidden="true">&times;</span>
+             </button>
+             <img src="" class="img-fluid w-100" id="image-modal" alt="modal image"/>
+          </div>        
+        </div>
+      </div>
+    </div>   
     <div class="container-wrapper">	
       <!-- section - answer your body's needs -->
       <section id="section-1">
@@ -71,11 +83,11 @@
             </div>
           </div>
           <div class="row">
-            <div class="col-12 col-md-6 col-xl-4 mb-3">
+            <div class="col-12 col-md-6 col-xl-4 mb-5">
               <div class="card rounded-0">
                 <picture>
                   <source srcset="img/3-Card_CTA/Card-01/Image-01.jpg 1x, img/3-Card_CTA/Card-01/Image-01@2x.jpg 2x" type="image/jpeg" />
-                  <img src="img/3-Card_CTA/Card-01/Image-01@1x.jpg" class="card-img-top" alt="Summer Lunch Menu By Mark Best" />
+                  <img src="img/3-Card_CTA/Card-01/Image-01@1x.jpg" class="card-img-top" alt="Summer Lunch Menu By Mark Best" data-toggle="modal" data-target="#modal-image" id="image-01"/>
                 </picture>
                 <div class="card-heading">Summer Lunch Menu By Mark Best</div>
                 <p class="card-content">AEG ambassador Mark Best’s summer eats are guaranteed to help you make the most of the warmer weather and
@@ -83,11 +95,11 @@
                 <a href="#" class="card-link">READ MORE</a>
               </div>
             </div>
-            <div class="col-12 col-md-6 col-xl-4 mb-3">
+            <div class="col-12 col-md-6 col-xl-4 mb-5">
               <div class="card rounded-0">
                 <picture>
                   <source srcset="img/3-Card_CTA/Card-02/Image-02.jpg 1x, img/3-Card_CTA/Card-02/Image-02@2x.jpg 2x" type="image/jpeg">
-                  <img src="img/3-Card_CTA/Card-02/Image-02@1x.jpg" class="card-img-top" alt="A Traditional Christmas Eve, Mark Best Style" />
+                  <img src="img/3-Card_CTA/Card-02/Image-02@1x.jpg" class="card-img-top" alt="A Traditional Christmas Eve, Mark Best Style" data-toggle="modal" data-target="#modal-image" id="image-02"/>
                 </picture>
                 <div class="card-heading">A Traditional Christmas Eve, Mark Best Style</div>
                 <p class="card-content">One of Australia's best chefs and AEG ambassador, Mark Best, shares his favourite Christmas Eve menu which
@@ -95,11 +107,12 @@
                 <a href="#" class="card-link">READ MORE</a> 
               </div>
             </div>
-            <div class="col-12 col-md-6 col-xl-4 mb-3">
+            <div class="col-12 col-md-6 col-xl-4 mb-5">
               <div class="card rounded-0">
                 <picture>
                   <source srcset="img/3-Card_CTA/Card-03/Image-03.jpg 1x, img/3-Card_CTA/Card-03/Image-03@2x.jpg 2x" type="image/jpeg">
-                  <img src="img/3-Card_CTA/Card-03/Image-03@1x.jpg" class="card-img-top" alt="Taking Taste Futher" />
+                  <img src="img/3-Card_CTA/Card-03/Image-03@1x.jpg" class="card-img-top" alt="Taking Taste Futher" data-toggle="modal" data-target="#modal-image" 
+                  id="image-03"/>
                 </picture>     
                 <div class="card-heading">Taking Taste Futher</div>
                 <p class="card-content">This exclusive cookbook gives you all the know‑how you need. We’ve designed it to make sure you get the most out of our products – and the best out of your food.</p>
