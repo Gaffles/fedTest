@@ -29,7 +29,9 @@ function jsDev() {
 function jsDist() {
 	return gulp.src('js/**/*.js')
 	.pipe(scriptsLint())
-	.pipe(babel())	
+	.pipe(babel({
+		presets: ['@babel/preset-env']
+	}))
 	.pipe(concat('main.js'))
 	//.pipe(sourcemaps.init())
 	.pipe(terser())
