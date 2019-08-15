@@ -9,7 +9,7 @@ sass.compiler = require('node-sass');
 const eslint = require('gulp-eslint');
 const concat = require('gulp-concat');
 const terser = require('gulp-terser');
-const sourcemaps = require('gulp-sourcemaps');
+//const sourcemaps = require('gulp-sourcemaps');
 const babel = require('gulp-babel');
 const cleanCSS = require('gulp-clean-css');
 
@@ -31,9 +31,9 @@ function jsDist() {
 	.pipe(scriptsLint())
 	.pipe(babel())	
 	.pipe(concat('main.js'))
-	.pipe(sourcemaps.init())
+	//.pipe(sourcemaps.init())
 	.pipe(terser())
-        .pipe(sourcemaps.write('./'))
+    //.pipe(sourcemaps.write('./'))
 	.pipe(gulp.dest('dist/js'));
 }
 
@@ -47,12 +47,26 @@ function scssDev() {
 
 function scssDist() {
 	return gulp.src('css/**/*.css')
-	.pipe(sourcemaps.init())
+	//.pipe(sourcemaps.init())
     .pipe(cleanCSS())
-    .pipe(sourcemaps.write())
+    //.pipe(sourcemaps.write())
     .pipe(gulp.dest('dist/css'));
 }
 
+function copyImgDist() {
+	return gulp.src('img/**/*.jpg')
+	.pipe(gulp.dest('dist/img'));
+}
+
+function copyFaviconDist() {
+	return gulp.src('./favicon.ico')
+	.pipe(gulp.dest('dist'));
+}
+
+function copyRemainingDist() {
+	return gulp.src('./*.html')
+	.pipe(gulp.dest('dist'));
+}
 
 const browserSync = require('browser-sync');
 const server = browserSync.create();
@@ -79,7 +93,7 @@ function watchTask(){
 }
 
 const dev = gulp.series(scssDev, jsDev, serve, watchTask);
-const toDist = gulp.series(scssDist, jsDist)
+const toDist = gulp.series(scssDist, jsDist, gulp.parallel(copyImgDist, copyFaviconDist, copyRemainingDist))
 
 exports.toDist = toDist;
 exports.dev = dev;
