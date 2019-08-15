@@ -43,14 +43,12 @@ hr {
 	margin-bottom: 15px;
 }
 
-.grid {
-	display: grid;
-	width:100%;
-	grid-row-gap:3.5%;
-
-	@media #{$bp-xs-below} {
-    	grid-row-gap:16px;
-  }
+.image-spacer {
+    margin-bottom:5.2%;
+    
+    @media #{$bp-xs-below}{  		
+    	margin-bottom:16px;
+  	}
 }
 
 // section - all the latest
