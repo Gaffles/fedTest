@@ -40,20 +40,17 @@ function jsDist() {
 function scssDev() {
 	return gulp.src('sass/**/*.scss', { sourcemaps: true })
 	.pipe(sass())
-	.on('error', sass.logError)
-	.pipe(
-		autoprefixer({        
-		})
-	)
+	.on('error', sass.logError)	
+	.pipe(autoprefixer('last 2 versions'))
 	.pipe(gulp.dest('css'));
 }
 
 function scssDist() {
-	return gulp.src('sass/**/*.scss')
+	return gulp.src('css/**/*.css')
 	.pipe(sourcemaps.init())
-        .pipe(cleanCSS())
-        .pipe(sourcemaps.write())
-        .pipe(gulp.dest('dist/css'));
+    .pipe(cleanCSS())
+    .pipe(sourcemaps.write())
+    .pipe(gulp.dest('dist/css'));
 }
 
 
@@ -74,7 +71,6 @@ function serve(done) {
 	done();
 }
 
-
 function watchTask(){
     gulp.watch(
         ['sass/**/*.scss', 'js/**/*.js', './index.html'],
@@ -83,7 +79,7 @@ function watchTask(){
 }
 
 const dev = gulp.series(scssDev, jsDev, serve, watchTask);
-const toDist = gulp.series(scssDist,jsDist)
+const toDist = gulp.series(scssDist, jsDist)
 
 exports.toDist = toDist;
 exports.dev = dev;
